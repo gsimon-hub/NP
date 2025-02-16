@@ -1,12 +1,12 @@
-根據預置數據，在類似 9 宮格裏填數，橫和列中數值不能相同，小的子 9 宮格能數值也不能相同
-如下圖：
-![預置9宮格](./backup/image.png)
+### 根據預置數據，在類似 9 宮格裏填數，橫和列中數值不能相同，小的子 9 宮格數值也不能相同，如下圖：
 
-    =>
+    ![預置9宮格](./backup/image.png)
 
-![程式生成9宮格及建議](./backup/image-1.png)
+        =>
 
-**procedure of the run:**
+    ![程式生成9宮格及建議](./backup/image-1.png)
+
+#### _procedure of the run:_
 
 - 把預置 9 宮格中數據映射到 np3.py 的 numpy 數組中：
   ```python

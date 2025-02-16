@@ -141,4 +141,5 @@ while not np.array_equiv(np.array(result), np.array(mtxMID)):
     # print(result)
 
 for i in range(0, 9):
-    print(nGrid[i])
+    print(result[i], "\n", nGrid[i])
+    # print(nGrid[i])
