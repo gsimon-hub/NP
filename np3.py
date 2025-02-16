@@ -52,7 +52,9 @@ arr[8, 3, 0] = 5
 # arr[8, 6, 0] = 2
 # arr[5, 8, 0] = 6
 
-# arr[1, 7, 0] = 6
+# append value based on the output, run for the final result
+arr[6, 8, 0] = 9
+arr[2, 5, 0] = 9
 
 rList = []
 rmList = []
@@ -141,5 +143,5 @@ while not np.array_equiv(np.array(result), np.array(mtxMID)):
     # print(result)
 
 for i in range(0, 9):
-    print(result[i], "\n", nGrid[i])
-    # print(nGrid[i])
+    # print(result[i], "\n", nGrid[i])
+    print(nGrid[i])

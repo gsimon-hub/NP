@@ -42,8 +42,12 @@ def caclRow(mtrx):
                     a, b = getMN(x, y)
                     mtxList = np.array(mtrx)[a * 3 : (a + 1) * 3, b * 3 : (b + 1) * 3]
                     mtrx[x][y] = {n + 1}
-                    [remove_from_compre(item, i + 1) for row in mtxList for item in row]
-                    [remove_from_compre(item[y], i + 1) for item in mtrx]
+                    [remove_from_compre(item, n + 1) for row in mtxList for item in row]
+                    [remove_from_compre(item[y], n + 1) for item in mtrx]
+                    # print(
+                    #     "relative 9-mtrx\n", [item for row in mtxList for item in row]
+                    # )
+                    # print("relative column\n", [item[y] for item in mtrx])
 
     return mtrx
 
@@ -66,8 +70,12 @@ def caclColumn(mtrx):
                     a, b = getMN(x, y)
                     mtrx[x][y] = {m + 1}
                     mtxList = np.array(mtrx)[a * 3 : (a + 1) * 3, b * 3 : (b + 1) * 3]
-                    [remove_from_compre(item, i + 1) for row in mtxList for item in row]
-                    [remove_from_compre(item, i + 1) for item in mtrx[x]]
+                    [remove_from_compre(item, m + 1) for row in mtxList for item in row]
+                    [remove_from_compre(item, m + 1) for item in mtrx[x]]
+                    # print(
+                    #     "relative 9-mtrx\n", [item for row in mtxList for item in row]
+                    # )
+                    # print("relative row\n", mtrx[x])
 
 
 def calcMatrix(mtrx):
@@ -89,9 +97,12 @@ def calcMatrix(mtrx):
                         x, y = math.floor(z / 3) + m - 3, z % 3 + n - 3
                         print(i + 1, x, y)
                         mtrx[x][y] = {i + 1}
+                        # bug fix from m + 1 to i + 1, remove the wrong value
                         [remove_from_compre(item, i + 1) for item in mtrx[x]]
                         # [remove_from_compre(item, i + 1) for item in np.array(mtrx)[:, y : y + 1]]
                         [remove_from_compre(item[y], i + 1) for item in mtrx]
+                        # print("relative column\n", [item[y] for item in mtrx])
+                        # print("relative row\n", mtrx[x])
 
 
 def getLst3(mtrx):
